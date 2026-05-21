@@ -1,0 +1,115 @@
+add_bottle:
+  name: Add bottle
+  description: Add one physical bottle to the local wine cellar.
+  fields:
+    name:
+      name: Name
+      required: true
+      selector:
+        text:
+    producer:
+      name: Producer
+      selector:
+        text:
+    vintage:
+      name: Vintage
+      selector:
+        number:
+          min: 1900
+          max: 2200
+    wine_type:
+      name: Wine type
+      default: red
+      selector:
+        select:
+          options:
+            - red
+            - white
+            - rosé
+            - sparkling
+            - dessert
+            - fortified
+            - other
+    location_id:
+      name: Location ID
+      selector:
+        text:
+
+update_bottle:
+  name: Update bottle
+  description: Update one bottle. Provide bottle_id plus fields to change, or an updates object.
+  fields:
+    bottle_id:
+      name: Bottle ID
+      required: true
+      selector:
+        text:
+    updates:
+      name: Updates
+      selector:
+        object:
+
+remove_bottle:
+  name: Remove bottle
+  description: Remove one bottle and archive it to local history.
+  fields:
+    bottle_id:
+      name: Bottle ID
+      required: true
+      selector:
+        text:
+    reason:
+      name: Reason
+      default: other
+      selector:
+        select:
+          options:
+            - drank
+            - gifted
+            - sold
+            - broken
+            - lost
+            - moved
+            - other
+    notes:
+      name: Notes
+      selector:
+        text:
+
+move_bottle:
+  name: Move bottle
+  description: Move a bottle to a local location or leave location_id empty to unassign it.
+  fields:
+    bottle_id:
+      name: Bottle ID
+      required: true
+      selector:
+        text:
+    location_id:
+      name: Location ID
+      selector:
+        text:
+
+duplicate_bottle:
+  name: Duplicate bottle
+  description: Duplicate one bottle as a separate physical bottle.
+  fields:
+    bottle_id:
+      name: Bottle ID
+      required: true
+      selector:
+        text:
+
+create_backup:
+  name: Create backup
+  description: Save a full local JSON backup, including bottle photos, to the Home Assistant server.
+
+restore_backup:
+  name: Restore backup
+  description: Restore a full local JSON backup from the Home Assistant server.
+  fields:
+    filename:
+      name: Filename
+      required: true
+      selector:
+        text:

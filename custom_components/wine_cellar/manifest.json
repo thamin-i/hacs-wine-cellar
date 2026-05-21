@@ -1,0 +1,13 @@
+{
+  "domain": "wine_cellar",
+  "name": "Local Wine Cellar",
+  "codeowners": ["@thamin-i"],
+  "config_flow": true,
+  "dependencies": ["http", "lovelace", "websocket_api"],
+  "documentation": "https://github.com/thamin-i/hacs-wine-cellar",
+  "integration_type": "service",
+  "iot_class": "local_push",
+  "issue_tracker": "https://github.com/thamin-i/hacs-wine-cellar/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}

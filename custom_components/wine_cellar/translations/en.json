@@ -1,0 +1,14 @@
+{
+  "title": "Local Wine Cellar",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set up Local Wine Cellar",
+        "description": "Create a local-only wine cellar. No external wine APIs or cloud services are used."
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Local Wine Cellar is already configured."
+    }
+  }
+}
